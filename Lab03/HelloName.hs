@@ -1,4 +1,5 @@
--- HelloName
+
+-- Main
 main :: IO ()
 main = do
     putStrLn "What is your name?"

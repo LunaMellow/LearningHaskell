@@ -1,3 +1,4 @@
+
 -- Versions:
 --   A: Pattern matching
 --   B: Case expression
@@ -14,7 +15,7 @@
 -- 1
 --
 -- >>> mheadA []
--- *** Exception: The list is empty
+-- The list is empty
 mheadA :: [a] -> a
 mheadA [] = error "The list is empty"
 mheadA (x:_) = x
@@ -27,7 +28,7 @@ mheadA (x:_) = x
 -- 1
 --
 -- >>> mheadB []
--- *** Exception: The list is empty
+-- The list is empty
 mheadB :: [a] -> a
 mheadB xs = case xs of
     [] -> error "The list is empty"
@@ -41,7 +42,7 @@ mheadB xs = case xs of
 -- 1
 --
 -- >>> mheadC []
--- *** Exception: The list is empty
+-- The list is empty
 mheadC :: [a] -> a
 mheadC xs = if null xs
     then error "The list is empty"
@@ -55,9 +56,9 @@ mheadC xs = if null xs
 -- Just 1
 --
 -- >>> mheadD []
--- Nothing
+-- The list is empty
 mheadD :: [a] -> Maybe a
-mheadD [] = Nothing
+mheadD [] = error "The list is empty"
 mheadD (x:_) = Just x
 
 -- | Returns the first element of a list using foldr.
@@ -68,7 +69,7 @@ mheadD (x:_) = Just x
 -- 1
 --
 -- >>> mheadE []
--- *** Exception: The list is empty
+-- The list is empty
 mheadE :: [a] -> a
 mheadE xs = foldr (\x _ -> x) (error "The list is empty") xs
 
@@ -80,7 +81,7 @@ mheadE xs = foldr (\x _ -> x) (error "The list is empty") xs
 -- 1
 --
 -- >>> mheadF []
--- *** Exception: The list is empty
+-- The list is empty
 mheadF :: [a] -> a
 mheadF xs = case [x | x <- xs] of
     [] -> error "The list is empty"

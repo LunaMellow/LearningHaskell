@@ -1,19 +1,3 @@
-module Main (main) where
-
-main :: IO ()
-main = mulTable 10
-
--- | mreverse is my own implementation of list reversal
---
--- >>> mreverse "Hello"
--- "olleH"
---
--- >>> mreverse [1,2,3]
--- [3,2,1]
---
-mreverse :: [a] -> [a]
-mreverse [] = [] -- Empty list remains empty
-mreverse (x:xs) = mreverse xs ++ [x]
 
 -- | Multiplies table of size `n x n` and prints it with padding
 --
@@ -32,3 +16,6 @@ mulTable n = mapM_ putStrLn [unwords [pad (i * j) | j <- [1..n]] | i <- [1..n]]
         -- Only pads up to 3 indexes. Which means that 100 will not be padded unless you do 3 - length str
 
 
+-- Main
+main :: IO ()
+main = mulTable 5
