@@ -1,7 +1,7 @@
 
 -- Test: doctest Fibonacci.hs
 
--- Fibonacci sequence
+-- | Fibonacci sequence
 --
 -- >>> take 10 fibs
 -- [0,1,1,2,3,5,8,13,21,34]
@@ -11,7 +11,7 @@ fibs = 0 : 1 : next fibs
   where
     next (a : t@(b:_)) = (a + b) : next t
 
--- N-th Fibonacci number
+-- | N-th Fibonacci number
 --
 -- >>> fib2 5
 -- 5
