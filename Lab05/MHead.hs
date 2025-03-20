@@ -2,27 +2,31 @@
 -- Test: doctest MHead.hs
 
 -- | Returns the first element of a list using pattern matching.
--- If the list is empty, it throws an error.
 --
 -- >>> mhead1 [1,2,3]
 -- 1
+--
 -- >>> mhead1 ["apple", "banana", "cherry"]
 -- "apple"
+--
 -- >>> mhead1 []
 -- *** Exception: The list is empty
+--
 mhead1 :: [a] -> a
 mhead1 [] = errorWithoutStackTrace "The list is empty"
 mhead1 (x:xs) = x
 
 -- | Returns the first element of a list using function guards.
--- If the list is empty, it throws an error.
 --
 -- >>> mhead2 [1,2,3]
 -- 1
+--
 -- >>> mhead2 ["apple", "banana", "cherry"]
 -- "apple"
+--
 -- >>> mhead2 []
 -- *** Exception: The list is empty
+--
 mhead2 :: [a] -> a
 mhead2 xs
     | null xs = errorWithoutStackTrace "The list is empty" 
@@ -38,6 +42,7 @@ mhead2 xs
 -- "apple"
 -- >>> mhead3 []
 -- *** Exception: The list is empty
+--
 mhead3 :: [a] -> a
 mhead3 xs = if null xs then errorWithoutStackTrace "The list is empty" else let (x:_) = xs in x
 
@@ -50,6 +55,7 @@ mhead3 xs = if null xs then errorWithoutStackTrace "The list is empty" else let 
 -- "apple"
 -- >>> mhead4 []
 -- *** Exception: The list is empty
+--
 mhead4 :: [a] -> a
 mhead4 xs = case xs of
     (x:_) -> x
@@ -64,6 +70,7 @@ mhead4 xs = case xs of
 -- "apple"
 -- >>> mhead5 []
 -- *** Exception: The list is empty
+--
 mhead5 :: [a] -> a
 mhead5 xs = header 
     where 
@@ -80,6 +87,7 @@ mhead5 xs = header
 -- "apple"
 -- >>> mhead6 []
 -- *** Exception: The list is empty
+--
 mhead6 :: [a] -> a
 mhead6 xs = case xs of
     (x:_) -> x

@@ -18,6 +18,7 @@ import System.IO (getContents)
 --
 -- >>> parseLine "Bob Marley 30"
 -- ("Bob","Marley",30)
+--
 parseLine :: String -> (String, String, Int)
 parseLine line = case words line of
     [name, lastname, age] -> (name, lastname, read age)
@@ -29,6 +30,7 @@ parseLine line = case words line of
 --
 -- >>> oldest []
 -- (0,0)
+--
 oldest :: [(String, String, Int)] -> (Int, Int)
 oldest = foldl update (0, 0) 
     where

@@ -9,6 +9,7 @@
 --
 -- >>> addAge (Age 10) (Age (-5))
 -- Age *** Exception: Number cannot be negative
+--
 newtype Age = Age Int deriving (Show)
 addAge :: Age -> Age -> Age
 addAge (Age x) (Age y)
@@ -22,6 +23,7 @@ addAge (Age x) (Age y)
 --
 -- >>> addAgeB (AgeFlex 10) (AgeFlex 5)
 -- AgeFlex 15
+--
 newtype AgeB = AgeFlex Int deriving (Show, Num)
 addAgeB :: AgeB -> AgeB -> AgeB
 addAgeB x y = x + y
@@ -33,6 +35,7 @@ addAgeB x y = x + y
 --
 -- >>> ageVal (Age 10)
 -- 10
+--
 ageVal :: Age -> Int
 ageVal (Age x) = x
 
@@ -44,6 +47,7 @@ ageVal (Age x) = x
 --
 -- >>> addNumber 3.5 2.5
 -- 6.0
+--
 addNumber :: Num a => a -> a -> a
 addNumber x y = x + y
 
