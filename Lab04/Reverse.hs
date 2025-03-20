@@ -1,5 +1,6 @@
 
--- Run: stack runhaskell Reverse.hs
+-- Run:     stack runhaskell Reverse.hs
+-- Test:    doctest Reverse.hs
 
 -- | mreverse is my own implementation of list reversal
 --

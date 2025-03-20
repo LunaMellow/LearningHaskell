@@ -1,5 +1,6 @@
 
--- Run: stack runhaskell MultiplyTable.hs
+-- Run:     stack runhaskell MultiplyTable.hs
+-- Test:    doctest MultiplyTable.hs
 
 -- | Multiplies table of size `n x n` and prints it with padding
 --

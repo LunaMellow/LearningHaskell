@@ -1,4 +1,6 @@
 
+-- Test: doctest Elements.hs
+
 -- Versions:
 --   A: Pattern matching
 --   B: Case expression
@@ -15,9 +17,9 @@
 -- 1
 --
 -- >>> mheadA []
--- The list is empty
+-- *** Exception: The list is empty
 mheadA :: [a] -> a
-mheadA [] = error "The list is empty"
+mheadA [] = errorWithoutStackTrace "The list is empty"
 mheadA (x:_) = x
 
 -- | Returns the first element of a list using a case expression.
@@ -28,10 +30,10 @@ mheadA (x:_) = x
 -- 1
 --
 -- >>> mheadB []
--- The list is empty
+-- *** Exception: The list is empty
 mheadB :: [a] -> a
 mheadB xs = case xs of
-    [] -> error "The list is empty"
+    [] -> errorWithoutStackTrace "The list is empty"
     (x:_) -> x
 
 -- | Returns the first element of a list using an if expression.
@@ -42,10 +44,10 @@ mheadB xs = case xs of
 -- 1
 --
 -- >>> mheadC []
--- The list is empty
+-- *** Exception: The list is empty
 mheadC :: [a] -> a
 mheadC xs = if null xs
-    then error "The list is empty"
+    then errorWithoutStackTrace "The list is empty"
     else xs !! 0
 
 -- | Returns the first element of a list wrapped in Maybe.
@@ -56,9 +58,9 @@ mheadC xs = if null xs
 -- Just 1
 --
 -- >>> mheadD []
--- The list is empty
+-- *** Exception: The list is empty
 mheadD :: [a] -> Maybe a
-mheadD [] = error "The list is empty"
+mheadD [] = errorWithoutStackTrace "The list is empty"
 mheadD (x:_) = Just x
 
 -- | Returns the first element of a list using foldr.
@@ -69,9 +71,9 @@ mheadD (x:_) = Just x
 -- 1
 --
 -- >>> mheadE []
--- The list is empty
+-- *** Exception: The list is empty
 mheadE :: [a] -> a
-mheadE xs = foldr (\x _ -> x) (error "The list is empty") xs
+mheadE xs = foldr (\x _ -> x) (errorWithoutStackTrace "The list is empty") xs
 
 -- | Returns the first element of a list using list comprehension.
 --
@@ -81,9 +83,9 @@ mheadE xs = foldr (\x _ -> x) (error "The list is empty") xs
 -- 1
 --
 -- >>> mheadF []
--- The list is empty
+-- *** Exception: The list is empty
 mheadF :: [a] -> a
 mheadF xs = case [x | x <- xs] of
-    [] -> error "The list is empty"
+    [] -> errorWithoutStackTrace "The list is empty"
     (x:_) -> x
 
