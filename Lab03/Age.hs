@@ -1,4 +1,6 @@
 
+-- Run: stack runhaskell Age.hs
+
 -- Version A: Strict Type Safety
 newtype Age = Age Int deriving (Show)
 addAge :: Age -> Age -> Age

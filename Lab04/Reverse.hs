@@ -1,4 +1,6 @@
 
+-- Run: stack runhaskell Reverse.hs
+
 -- | mreverse is my own implementation of list reversal
 --
 -- >>> mreverse "Hello"

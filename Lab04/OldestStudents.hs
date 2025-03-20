@@ -1,6 +1,5 @@
 
--- Windows:     Get-Content OldestStudents.txt | runghc OldestStudents.hs
--- Mac:         Unknown
+-- Run: stack runhaskell OldestStudents.hs < OldestStudents.txt
 
 import System.IO (getContents)
 

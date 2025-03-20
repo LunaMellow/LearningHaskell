@@ -1,4 +1,6 @@
 
+-- Run: stack runhaskell MultiplyTable.hs
+
 -- | Multiplies table of size `n x n` and prints it with padding
 --
 -- >>> mulTable 5

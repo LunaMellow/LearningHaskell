@@ -1,4 +1,6 @@
 
+-- Run: stack runhaskell HelloName.hs
+
 -- Main
 main :: IO ()
 main = do
